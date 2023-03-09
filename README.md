@@ -9,11 +9,13 @@ The Aviation Data Analysis project aims to analyze data on flights to identify p
 
 The project consists of several stages, starting with data cleaning to address missing values, errors, and inconsistencies in the dataset. This is followed by exploratory data analysis to identify patterns and trends in the data, and statistical modeling to test hypotheses and make predictions based on the data.
 
+# Goal
+
 The ultimate goal of the project is to provide insights and recommendations that can help airlines and airports improve their performance and better serve their customers. 
 
 This documentation provides a detailed overview of the Aviation Data Analysis project, including the methodology, data sources, data cleaning process, data analysis techniques, and findings. The documentation is intended to provide a comprehensive guide for anyone interested in replicating or building upon the project's analysis.
 
-I hope that this project will contribute to the ongoing efforts to improve the performance of airlines and airports, and we invite feedback and suggestions for future iterations of the project.
+I hope that this project will contribute to the ongoing efforts to improve the performance of airlines and airports, and I invite feedback and suggestions for future iterations of the project.
 
 # Files 
 The project includes the following files:
