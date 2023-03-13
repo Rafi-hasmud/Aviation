@@ -23,14 +23,18 @@ The project includes the following files:
 
 # Data Wrangling using Excel
 
-The first step in any data analysis project is to collect and clean the data. In this project, we collected data on aviation incidents from various sources and consolidated them into a single dataset. This dataset contained a large number of missing values, errors, and inconsistencies, which needed to be addressed before any meaningful analysis could be performed.
-To clean the data, we used various formulae in Excel to identify and correct errors, inconsistencies, and missing values. We also used conditional formatting and data validation to ensure that the data was consistent and accurate.
+The first step in any data analysis project is to collect and clean the data. In this project, I collected data on aviation incidents from various sources and consolidated them into a single dataset. This dataset contained a large number of missing values, errors, and inconsistencies, which needed to be addressed before any meaningful analysis could be performed.
+To clean the data, I used various formulae in Excel to identify and correct errors, inconsistencies, and missing values. I also used conditional formatting and data validation to ensure that the data was consistent and accurate.
+The following steps I am taken to clean the dataset:
+1.	Identify and remove duplicate records: I used Excel's built-in tools to identify and remove any duplicate records from the dataset. This step helped to reduce the size of the dataset and avoid any errors due to duplicate records.
+2.	Handle missing values: I used various formulae to fill in missing values in the dataset. For example, I used the IF function to check if a value was missing and then filled in a default value or a value based on the adjacent data.
+3.	Correct errors: I used formulae to correct any errors in the dataset. For example, I used the VLOOKUP function to correct misspelled names or to map one value to another.
+4.	Standardize data: I used formulae to standardize data in the dataset. For example, I used the UPPER function to convert all text to uppercase or the PROPER function to capitalize the first letter of each word.
+5.	Remove unnecessary columns: I removed any columns from the dataset that Ire not required for the analysis. This step helped to reduce the size of the dataset and make it more manageable.
+6.	Validate data: I used data validation to ensure that the data in the dataset was consistent and accurate. For example, I set up data validation rules to ensure that all dates were in the correct format and fell within a specific range.
+By following these steps, I was able to clean the dataset and prepare it for analysis. The cleaned dataset was then saved in a separate file to ensure that the original data was not lost or overwritten.
 
-The following steps were taken to clean the dataset:
-1.	Identify and remove duplicate records: We used Excel's built-in tools to identify and remove any duplicate records from the dataset. This step helped to reduce the size of the dataset and avoid any errors due to duplicate records.
-2.	Handle missing values: We used various formulae to fill in missing values in the dataset. For example, we used the IF function to check if a value was missing and then filled in a default value or a value based on the adjacent data.
-3.	Correct errors: We used formulae to correct any errors in the dataset. For example, we used the VLOOKUP function to correct misspelled names or to map one value to another.
-4.	Standardize data: We used formulae to standardize data in the dataset. For example, we used the UPPER function to convert all text to uppercase or the PROPER function to capitalize the first letter of each word.
-5.	Remove unnecessary columns: We removed any columns from the dataset that were not required for the analysis. This step helped to reduce the size of the dataset and make it more manageable.
-6.	Validate data: We used data validation to ensure that the data in the dataset was consistent and accurate. For example, we set up data validation rules to ensure that all dates were in the correct format and fell within a specific range.
+# Data Interpretation, Exploration and Wrangling using SQL
+
+
 
