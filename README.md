@@ -58,6 +58,7 @@ These SQL queries are used to clean, correct and transform data in the "Flights"
  - The second query corrects the data in the "arrival_status" column by replacing misspelled values ("Not Availble") with the correct spelling ("Not Available").
  - The third and fourth queries change the names of two columns in the "Flights" table from "raw_wheels_on_time" and "raw_wheels_off_time" to "wheels_on_time" and "wheels_off_time", respectively.
 
+--------------------------------------------------------------------------
 
 ```sql
 --figure out the irregularity
@@ -110,6 +111,8 @@ Flight cancellations and delays are a common occurrence in the aviation industry
 
 These queries are part of the data preparation phase of the "Aviation Data Analysis" project and are essential for ensuring the quality and integrity of the data.
 
+--------------------------------------------------------------------------
+
 ```sql
 --Replace 0/1 with No/Yes
 
@@ -137,6 +140,8 @@ The reason for using this SQL code is to standardize the values in the 'was_canc
 Using 'NO' and 'YES' instead of '0' and '1' improves the readability of the data and makes it easier to understand the meaning of each value. 
 This is especially important if the data is being used for reporting or analysis purposes.
 
+--------------------------------------------------------------------------
+
 ```sql
 --fix the time format
 
@@ -156,6 +161,8 @@ The reason for using this SQL code is to ensure that the data in the 'day' colum
 If the time format is not standardized, it can lead to errors in analysis and reporting. By fixing the time format to the correct format, 
 it makes it easier to analyze the data and draw insights from it. This is especially important for the Aviation Data Analysis project, 
 where accurate data is critical for decision-making and identifying trends in the aviation industry.
+
+--------------------------------------------------------------------------
 
 ```sql
 -- average distance
@@ -177,6 +184,7 @@ which is important for analyzing the performance of airlines and identifying tre
 The average distance is a key metric for measuring the efficiency and profitability of airlines. 
 By calculating the average distance using SQL, we can easily incorporate this metric into our analysis and reporting.
 
+--------------------------------------------------------------------------
 
 ```sql
 ---average arrival and departure delay
@@ -229,6 +237,8 @@ By grouping the flights by day of the week, we can identify if there are any spe
 This information can be used to improve airline scheduling and operations. 
 The results of these queries can be used in the Aviation Data Analysis project to provide insights and recommendations 
 to airlines for improving their performance.
+
+--------------------------------------------------------------------------
 
 ```sql
 ---distribution of the reasons for flight cancellations
@@ -298,6 +308,7 @@ and investigate the causes behind them.
 
 Overall, these queries provide valuable insights into flight cancellations and help airlines make informed decisions to improve their operations and reduce cancellations.
 
+--------------------------------------------------------------------------
 
 ```sql
 -- avg departure & arrival delay of airlines
