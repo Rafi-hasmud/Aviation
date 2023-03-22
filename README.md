@@ -97,6 +97,10 @@ FROM Aviation.dbo.Flights
 WHERE actual_departure_time = 'Cancelled'
 ```
 
+<img src = "/Screenshots/sql-1.JPG"> <img src = "/Screenshots/sql-2.jpg">
+
+<img src = "/Screenshots/sql-3.JPG"> <img src = "/Screenshots/sql-4.jpg">
+
 These SQL queries are used to identify and correct data irregularities in the "Flights" table of the "Aviation" database, which is part of the "Aviation Data Analysis" project. The queries perform the following actions:
  - The first query selects the "arrival_delay" and "actual_arrival_time" columns from the "Flights" table where the "actual_arrival_time" value is "Cancelled". This query is used to identify any data quality issues related to flight cancellations.
  - The second and third queries alter the "arrival_delay" column to allow for null values and then replace any null values with "Cancelled" where the "actual_arrival_time" value is also "Cancelled". This transformation is necessary to ensure data consistency and enable accurate analysis of the data.
@@ -128,6 +132,7 @@ SET was_cancelled = CASE was_cancelled
 SELECT was_cancelled
 FROM Aviation.dbo.Flights
 ```
+<img src = "/Screenshots/sql-5.JPG"> <img src = "/Screenshots/sql-6.jpg">
 
 The above SQL code is an example of how to replace 0 and 1 with No and Yes, respectively, in the 'was_cancelled' column of the Aviation.dbo.Flights table.
 
@@ -151,6 +156,8 @@ ALTER COLUMN day date
 SELECT day
 FROM Aviation.dbo.Flights
 ```
+<img src = "/Screenshots/sql-7.JPG"> <img src = "/Screenshots/sql-8.jpg">
+
 The above SQL code is an example of how to fix the time format in the 'day' column of the Aviation.dbo.Flights table.
 
  - The first statement changes the data type of the 'day' column to date, which allows the column to store date values.
@@ -171,6 +178,8 @@ SELECT AVG (TRY_CONVERT(decimal, LEFT(distance, CHARINDEX(' ', distance)-1))) as
 From Aviation.dbo.Flights
 WHERE distance IS NOT NULL
 ```
+<img src = "/Screenshots/sql-9.jpg">
+
 The above SQL code is an example of how to calculate the average distance of flights in the Aviation.dbo.Flights table.
 
  - The SELECT statement uses the AVG function to calculate the average distance of all flights in the table. 
@@ -216,8 +225,29 @@ ORDER BY
 			 WHEN 'Wednesday' THEN 6
 			 WHEN 'Thursday'  THEN 7
 			 END
+			 
+ --Most Common causes of flight delays
+
+SELECT delay_cause,  COUNT(*) as delay_count
+FROM
+     (SELECT CASE 
+             WHEN security_delay>0 THEN 'Security Delay'
+			 WHEN weather_delay>0 THEN 'Weather Delay'
+			 WHEN late_aircraft_delay>0 THEN 'Late Aircraft Delay'
+			 WHEN air_traffic_delay>0 THEN 'Air Traffic Delay'
+			 WHEN carrier_delay>0 THEN 'Carrier Delay'
+			 -- 'Not Measured'
+			 END as delay_cause
+ FROM Aviation.dbo.Flights
+/*WHERE arrival_status = 'Delayed'
+ OR departure_status = 'Delayed'*/) delay_table
+Group by delay_cause
+Order by 2 DESC
 
 ```
+<img src = "/Screenshots/sql-10.jpg"> 
+<img src = "/Screenshots/sql-11.jpg">
+<img src = "/Screenshots/sql-12.jpg">
 
 The above SQL code includes two examples of how to analyze flight delays in the Aviation.dbo.Flights table.
 
@@ -229,6 +259,11 @@ The above SQL code includes two examples of how to analyze flight delays in the 
 The GROUP BY clause groups the flights by the day_of_week column, and the 
 ORDER BY clause orders the results by the day of the week in a specific order. 
 The CONVERT and TRY_CONVERT functions are used to convert the arrival_delay and departure_delay columns to integer values.
+
+- The second query selects the delay cause for flights and counts the number of times each delay cause occurred in the dataset. The delay cause is determined by checking the value of specific delay columns for each flight in the Aviation.dbo.Flights table.
+The CASE statement in the subquery evaluates each delay column in turn, and assigns the corresponding delay cause string to the delay_cause column. If none of the delay columns have a non-zero value, then the delay_cause value is not assigned.
+The delay_cause and COUNT(*) columns are selected in the outer query, and grouped by delay_cause. The resulting table is sorted in descending order by the delay_count column.
+
 
 The reason for using these SQL queries is to analyze flight delays in the Aviation.dbo.Flights table, 
 which is important for identifying trends and performance metrics of airlines. 
@@ -289,6 +324,12 @@ SELECT origin_city, origin_state,
 	ORDER BY 3 DESC,4 DESC
 
 ```
+
+<img src = "/Screenshots/sql-13.jpg">
+<img src = "/Screenshots/sql-14.jpg">
+<img src = "/Screenshots/sql-15.jpg">
+<img src = "/Screenshots/sql-16.jpg">
+
 The above queries are used to analyze the distribution and reasons for flight cancellations.
 
  - The first query displays the distribution of reasons for flight cancellations in the Aviation database. 
@@ -357,6 +398,11 @@ AND   destination_city = 'Washington'
 GROUP BY airline_name
 Order BY 2 DESC
 ```
+<img src = "/Screenshots/sql-17.jpg">
+<img src = "/Screenshots/sql-18.jpg">
+<img src = "/Screenshots/sql-19.jpg">
+<img src = "/Screenshots/sql-20.jpg">
+
 The above queries are essential to the Aviation Data Analysis project. The project aims to explore and analyze data related to flights to improve the overall aviation industry's efficiency and quality. The data provides valuable insights into the performance of airlines, their on-time arrivals, departures, delays, and cancellation rates.
 
  - The first query provides the average departure and arrival delays of airlines, which are significant factors that influence customer satisfaction. It allows airlines to identify the areas where they can improve their services and make informed decisions about how to allocate resources effectively.
@@ -366,7 +412,7 @@ The above queries are essential to the Aviation Data Analysis project. The proje
  - The third query identifies the airlines that have the highest percentage of on-time departures and arrivals. On-time performance is critical to passenger satisfaction and can significantly affect an airline's reputation. The information obtained from this query can help airlines to focus on improving their on-time performance.
 
  - The fourth query is useful in identifying which airlines have the most frequent flights between specific city pairs. This information can help airlines identify their popular routes and optimize their schedules and services to meet the demand and improve customer satisfaction.
- - 
+
 
 Overall, these queries provide airlines with essential insights into their performance and allow them to make data-driven decisions to improve their services and meet their customer's needs. The Aviation Data Analysis project's success is based on the accurate and relevant data obtained from these queries, making them an essential part of the project's documentation.
 
